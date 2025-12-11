@@ -29,6 +29,7 @@ Também contém:
 - Tabelas
 - Elementos multimídia (imagem)
 - Google Maps incorporado com iframe
+- integração de api com javascript
 
 ---
 
