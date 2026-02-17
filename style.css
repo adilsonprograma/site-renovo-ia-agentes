@@ -15,14 +15,16 @@ body {
 }
 
 img {
-    max-width: 100%;
+    max-width: 95%;
     height: auto;
-    display: block;
+    display: flex;
+    text-align: center;
+    
 }
 
 a {
     color: #6b5d0f;
-    text-decoration: none;
+    text-decoration: inherit;
     font-weight: 500;
 }
 
@@ -32,7 +34,7 @@ a:hover {
 
 /* Layout principal */
 .page-wrapper {
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 16px;
 }
@@ -40,15 +42,18 @@ a:hover {
 header {
     padding: 16px 0 8px;
     text-align: center;
+
 }
 
 header img {
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 3px 10px 30px rgba(0, 0, 0, 0.12);
+    flex: auto;
 }
 
 nav {
     background-color: #ffffffcc;
+    -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     border-radius: 999px;
     padding: 10px 20px;
@@ -211,6 +216,165 @@ button:active {
 
     nav {
         border-radius: 16px;
+    }
+}
+
+#contatos {
+    transition: 3s;
+}
+
+.container-header {
+    display: flex;
+
+}
+
+/* Assistente flutuante - Design profissional */
+.floating-assistant {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 340px;
+    max-width: calc(100vw - 40px);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    z-index: 9999;
+    font-size: 0.95rem;
+    animation: slideIn 0.3s ease-out;
+    transition: all 0.3s ease;
+}
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.floating-assistant.collapsed {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.floating-assistant .fa-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: linear-gradient(135deg, #7e8008 0%, #9aa10f 100%);
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.floating-assistant .fa-icon {
+    font-size: 1.4rem;
+    margin-right: 8px;
+}
+.floating-assistant .fa-body {
+    padding: 14px;
+    max-height: 380px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.floating-assistant .fa-body::-webkit-scrollbar {
+    width: 6px;
+}
+.floating-assistant .fa-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+.floating-assistant .fa-body::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 3px;
+}
+.floating-assistant .fa-body::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+.floating-assistant .fa-section {
+    margin-bottom: 12px;
+}
+.floating-assistant .fa-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #7e8008;
+    margin-bottom: 6px;
+    display: block;
+}
+.floating-assistant .fa-body small {
+    color: #666;
+    line-height: 1.5;
+    display: block;
+}
+.fa-btn {
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+.fa-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+.fa-input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.fa-input:focus {
+    outline: none;
+    border-color: #7e8008;
+    box-shadow: 0 0 0 3px rgba(126, 128, 8, 0.1);
+}
+.floating-assistant .form-select {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+}
+.fa-response {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 3px solid #7e8008;
+    margin: 8px 0;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+.fa-send-btn {
+    width: 100%;
+    padding: 8px;
+    background: linear-gradient(135deg, #7e8008 0%, #9aa10f 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: opacity 0.2s, transform 0.1s;
+    margin-top: 8px;
+}
+.fa-send-btn:hover {
+    opacity: 0.9;
+}
+.fa-send-btn:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+    .floating-assistant {
+        right: 12px;
+        bottom: 12px;
+        width: calc(100vw - 24px);
+        max-width: calc(100vw - 24px);
+    }
+    .floating-assistant.collapsed {
+        right: 12px;
+        bottom: 12px;
     }
 }
 
